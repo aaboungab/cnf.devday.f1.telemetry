@@ -58,8 +58,7 @@ Note: the parser targets the **2026 Season Pack** packet layout (24 cars,
 
 ![Dashboard](docs/dashboard.png)
 
-Drive. Crash. An alert reaches the dashboard in ~1–2 min (Flink watermark +
-commit latency on default settings).
+An alert reaches the dashboard when a Driver crash occurs and when lap times degregate. These will show up on the alerts in ~1–2 min (Flink watermark + commit latency on default settings).
 
 Local checks without Confluent: `python3 -m src.telemetry.receiver` (raw
 packets), `python3 -m src.telemetry.decode_preview` (decoded values),
