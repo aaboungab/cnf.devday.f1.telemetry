@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F1TelemetryEvent",
+  "description": "Normalized F1 25 car telemetry event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_type",
+    "timestamp",
+    "session_time",
+    "car_index",
+    "speed",
+    "throttle",
+    "brake",
+    "gear",
+    "engine_rpm",
+    "drs"
+  ],
+  "properties": {
+    "event_type": { "type": "string", "const": "telemetry" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "session_time": { "type": "number" },
+    "car_index": { "type": "integer", "minimum": 0, "maximum": 23 },
+    "speed": { "type": "integer", "minimum": 0, "maximum": 500 },
+    "throttle": { "type": "number", "minimum": 0, "maximum": 1 },
+    "brake": { "type": "number", "minimum": 0, "maximum": 1 },
+    "gear": { "type": "integer", "minimum": -1, "maximum": 8 },
+    "engine_rpm": { "type": "integer", "minimum": 0 },
+    "drs": { "type": "integer", "minimum": 0, "maximum": 1 },
+    "lap_number": { "type": ["integer", "null"] },
+    "car_position": { "type": ["integer", "null"] },
+    "current_lap_time_ms": { "type": ["integer", "null"] },
+    "last_lap_time_ms": { "type": ["integer", "null"] }
+  }
+}
