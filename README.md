@@ -64,14 +64,6 @@ Local checks without Confluent: `python3 -m src.telemetry.receiver` (raw
 packets), `python3 -m src.telemetry.decode_preview` (decoded values),
 `python3 -m src.telemetry.stream` (normalized JSON).
 
-## Diagnostics
-
-```bash
-python3 -m unittest discover tests            # parser + normalizer tests
-.venv/bin/python scripts/read_alerts.py       # dump f1.alerts
-.venv/bin/python scripts/scan_speed_drops.py  # crash signatures in raw stream
-```
-
 ## Stream Lineage
 
 ![Dashboard](docs/stream-lineage.png)
